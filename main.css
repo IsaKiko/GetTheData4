@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  color: black;
+/*  outline: #FF0000 solid 1px;
+*/}
+
+
+body{
+/*	background-color: WhiteSmoke;
+*/	font-family: 'Open Sans', sans-serif;
+/*	font-weight: 800;	
+*/	/*color: black;*/
+}
+
+h1{
+	padding:20px;
+}
+
+a{
+	text-align: left;
+}
+
+iframe{
+	/*width: 400px;*/
+}
+
+plot_div{
+	display: inline-block;
+	min-width: 0px;
+	width:600px;
+}
+
+.btn-default{
+	margin: 5px;
+
+}
+
+.continue{
+    position: relative;
+    top:-50px;
+    left: 1000px;
+}
+
+.container {
+  display: inline-block;
+  flex-direction: column ;
+  justify-content: right;
+  align-items: right;
+  height:100px;
+}
+
+.text{
+	width:400px;
+	padding: 20px;
+	left: 600px;
+	position:relative;
+	top: -300px;
+	font-size: 1.5em;
+}
+
