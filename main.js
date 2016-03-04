@@ -1,5 +1,11 @@
+var header_text = 'Who benefits from negative gearing?';
+//var header_text = 'Some other random question we want answers to..';
+
+var sheetidQuestion = "1i8so_LcvcBGO-Ozi2lPAHmC-oPRKuCpdazFT9z0hQkg";
+var sheetidAnswer = "1lNHAd89I2RASRHv992pCdBNdlUvsn1SO0yrLwPAjrIk";
+
 var xmlhttp = new XMLHttpRequest();
-var url = "https://script.google.com/macros/s/AKfycbwrK6hgwI8Yg0HSCGzlT3l9af4YUVLlusQXvfqTC5rtZfOPWis/exec?requestType=getdata";
+var url = "https://script.google.com/macros/s/AKfycbwrK6hgwI8Yg0HSCGzlT3l9af4YUVLlusQXvfqTC5rtZfOPWis/exec?requestType=getdata&sheetid="+sheetidQuestion;
 
 xmlhttp.onreadystatechange = function() {
    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -35,9 +41,9 @@ var main = d3.select("#main").style("min-width", main_w_px).style("height", main
 
 var titlepage = main.append("div").style("min-width", page_w_px).style("min-height", page_h_px).style("position","relative").style("left","0px").style("top","0px").style("display","inline-block");
 
-var header_text = 'Who benefits from negative gearing?';
+
 var header = titlepage.append("h1").text(header_text);
-var cont_btn = titlepage.append("button").text("start the quiz").attr("class","btn btn-default");
+var cont_btn = titlepage.append("button").text("start the quiz").attr("class","btn btn-default start");
 
 
 for (var q_idx = 0; q_idx< questions.questions.length; q_idx++){
@@ -159,12 +165,12 @@ var sendReport = function(id){
     var id_array = id.split(",");
     var qid = id_array[1];
     var answer = id_array[3];
-    var questiontext = questions.questions[qid].text;
+    var questiontext = questions.questions[qid].question;
     var answertext = questions.questions[qid].options.split(",")[answer];
 
 
     var xmlhttpagain = new XMLHttpRequest();
-    var urlagain = "https://script.google.com/macros/s/AKfycbwrK6hgwI8Yg0HSCGzlT3l9af4YUVLlusQXvfqTC5rtZfOPWis/exec?requestType=postdata&qid="+qid+"&answer="+answer+"&questiontext="+questiontext+"&answertext="+answertext;
+    var urlagain = "https://script.google.com/macros/s/AKfycbwrK6hgwI8Yg0HSCGzlT3l9af4YUVLlusQXvfqTC5rtZfOPWis/exec?requestType=postdata&qid="+qid+"&answer="+answer+"&questiontext="+questiontext+"&answertext="+answertext+"&sheetid="+sheetidAnswer;
 
     xmlhttpagain.onreadystatechange = function() {
         if (xmlhttpagain.readyState == 4 && xmlhttpagain.status == 200) {
