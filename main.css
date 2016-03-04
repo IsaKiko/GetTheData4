@@ -1,8 +1,8 @@
 * {
   box-sizing: border-box;
   color: black;
-/*  outline: #FF0000 solid 1px;
-*/}
+  outline: #FF0000 solid 1px;
+}
 
 
 body{
@@ -37,7 +37,7 @@ plot_div{
 
 .continue{
     position: relative;
-    top:-50px;
+    top:-150px;
     left: 1000px;
 }
 
@@ -50,11 +50,11 @@ plot_div{
 }
 
 .text{
-	width:400px;
+	width:450px;
 	padding: 20px;
 	left: 600px;
 	position:relative;
-	top: -300px;
-	font-size: 1.5em;
+	top: -400px;
+	font-size: 1.2em;
 }
 
